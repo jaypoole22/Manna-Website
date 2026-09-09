@@ -45,9 +45,9 @@ h1 { font-family: var(--serif); font-size: clamp(4rem, 7.1vw, 7.5rem); font-weig
 
 .manifesto { padding: 130px 7vw 150px; text-align: center; }
 .manifesto h2, .section-heading h2, .blessing h2, .newsletter h2 { font-family: var(--serif); font-size: clamp(3rem, 5.5vw, 6rem); font-weight: 400; letter-spacing: -.05em; line-height: .98; }
-.manifesto h2 { margin-bottom: 42px; } /* paragraph spacing */
+.manifesto h2 { margin-bottom: 55px; } /* paragraph spacing */
 .manifesto h2 em { font-weight: 400; color: var(--copper); }
-.manifesto > p:last-child { max-width: 850px; margin: 0 auto; font-family: var(--serif); font-size: 25px; line-height: 1.8; color: #605752; }
+.manifesto > p:last-child { max-width: 1050px; margin: 0 auto; font-family: var(--serif); font-size: 25px; line-height: 1.8; color: #605752; }
 .about-image { height: 600px; width: 750px; grid-column: 2;}
 
 .collection { padding: 90px 4.5vw 110px; background: var(--cream); }
