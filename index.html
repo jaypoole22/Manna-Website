@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Manna for the Skin — nourishing body care made for everyday blessing." />
+  <meta name="theme-color" content="#0f2a20" />
+  <title>Manna for the Skin</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Manna for the Skin home">
+      <img src="images/MannaMonogram.png" class="manna-mono" alt="Manna Monogram">
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#shop">Shop</a>
+      <a href="#blessing">Our blessing</a>
+      <a href="#story">Our story</a>
+    </nav>
+    <button class="cart-button" type="button" aria-label="Open shopping cart">
+      Cart <span class="cart-count" aria-live="polite">0</span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-image" src="images/Manna-mainshot.JPG" alt="Manna main shot" />
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">A softer way to care</p>
+        <h1 id="hero-title">Give your skin<br />something good.</h1>
+        <p class="hero-copy">Thoughtful body care for soft skin, quiet moments, and the blessings that bring you back to yourself.</p>
+        <a class="button button-light" href="#shop">Explore the collection <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="manifesto" id="story">
+      <p class="eyebrow">Your skin, well fed</p>
+      <h2>Care that feels like<br /><em>coming home.</em></h2>
+      <p>We believe the best routines are the ones you look forward to. Manna turns everyday moisturizing into a small moment of intention—simple, sensorial, and made with care.</p>
+    </section>
+
+    <section class="collection" id="shop" aria-labelledby="collection-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">The collection</p>
+          <h2 id="collection-title">Daily nourishment</h2>
+        </div>
+        <p>Three textures. One simple blessing. Layer them or love them one at a time.</p>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-photo crop-oil">
+            <img src="assets/manna-hero.png" alt="Amber skincare oil bottle" />
+            <span class="product-tag">Best seller</span>
+          </div>
+          <div class="product-info">
+            <div><h3>Daily Dew</h3><p>Nourishing body oil</p></div>
+            <button class="add-button" data-product="Daily Dew" type="button">Add <span>$28</span></button>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-photo crop-cream">
+            <img src="assets/manna-hero.png" alt="Cream skincare jar" />
+            <span class="product-tag">Rich moisture</span>
+          </div>
+          <div class="product-info">
+            <div><h3>Cloud Cream</h3><p>Whipped body butter</p></div>
+            <button class="add-button" data-product="Cloud Cream" type="button">Add <span>$32</span></button>
+          </div>
+        </article>
+        <article class="product-card">
+          <div class="product-photo crop-wash">
+            <img src="assets/manna-hero.png" alt="Frosted skincare pump bottle" />
+            <span class="product-tag">Everyday essential</span>
+          </div>
+          <div class="product-info">
+            <div><h3>Soft Start</h3><p>Gentle body wash</p></div>
+            <button class="add-button" data-product="Soft Start" type="button">Add <span>$24</span></button>
+          </div>
+        </article>
+      </div>
+      <p class="editor-note">Sample product names, descriptions, and pricing—ready to replace with Manna's final catalog.</p>
+    </section>
+
+    <section class="blessing" id="blessing" aria-labelledby="blessing-title">
+      <div class="blessing-number">03</div>
+      <div class="blessing-title">
+        <p class="eyebrow">The Manna blessing</p>
+        <h2 id="blessing-title">Slow down.<br />Soften up.</h2>
+      </div>
+      <ol class="blessing-steps">
+        <li><span>01</span><div><h3>Cleanse</h3><p>Begin with warm water and a gentle, unhurried wash.</p></div></li>
+        <li><span>02</span><div><h3>Nourish</h3><p>Massage moisture into damp skin to help seal in softness.</p></div></li>
+        <li><span>03</span><div><h3>Return</h3><p>Take one breath before stepping back into your day.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <div>
+        <p class="eyebrow">Stay close</p>
+        <h2 id="newsletter-title">A little goodness,<br />delivered.</h2>
+      </div>
+      <form id="newsletter-form" novalidate>
+        <label for="email">Email address</label>
+        <div class="input-row">
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+          <button type="submit" aria-label="Join the Manna email list">Join <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="form-status" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#top"><span class="brand-mark">M</span><span>Manna <small>for the skin</small></span></a>
+    <p>Made with intention. Meant to be felt.</p>
+    <div><a href="#shop">Shop</a><a href="#story">About</a><a href="mailto:hello@example.com">Contact</a></div>
+    <small>© <span id="year"></span> Manna for the Skin</small>
+  </footer>
+
+  <div class="drawer-backdrop" hidden></div>
+  <aside class="cart-drawer" aria-hidden="true" aria-labelledby="cart-title">
+    <div class="drawer-head"><h2 id="cart-title">Your cart</h2><button class="close-cart" type="button" aria-label="Close cart">×</button></div>
+    <div class="cart-items"><p class="empty-cart">Your blessing is waiting.</p></div>
+    <div class="cart-total"><span>Subtotal</span><strong>$<span id="subtotal">0</span></strong></div>
+    <button class="checkout" type="button">Checkout coming soon</button>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
