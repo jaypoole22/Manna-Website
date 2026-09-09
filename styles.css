@@ -61,13 +61,12 @@ h1 { font-family: var(--serif); font-size: clamp(4rem, 7.1vw, 7.5rem); font-weig
 .crop-oil img { object-position: 67% 49%; }
 .crop-cream img { object-position: 80% 70%; }
 .crop-wash img { object-position: 98% 45%; }
-.product-tag { position: absolute; top: 15px; left: 15px; background: rgba(247,244,235,.9); padding: 9px 12px; font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; }
+.product-tag { position: absolute; top: 15px; left: 15px; background: rgba(247,244,235,.9); padding: 9px 12px; font-size: 25px; letter-spacing: .1em; text-transform: uppercase; }
 .product-info { display: flex; justify-content: space-between; gap: 15px; padding: 20px 2px 0; }
 .product-info h3 { font-family: var(--serif); font-size: 1.45rem; font-weight: 400; margin-bottom: 5px; }
 .product-info p { color: #687169; font-size: .8rem; }
 .add-button { align-self: start; border: 0; border-bottom: 1px solid var(--ink); background: transparent; padding: 4px 0 7px; cursor: pointer; font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; display: flex; gap: 12px; }
 .add-button:hover { color: var(--copper); border-color: var(--copper); }
-.editor-note { margin: 30px 0 0; font-size: .72rem; color: #747b76; }
 
 .blessing { background: var(--forest); color: var(--cream); padding: 110px 7vw 125px; display: grid; grid-template-columns: .35fr 1fr 1.25fr; gap: 5vw; }
 .blessing-number { font-family: var(--serif); font-size: .95rem; color: rgba(255,255,255,.5); }
