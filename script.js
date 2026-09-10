@@ -48,6 +48,7 @@ cartItems.addEventListener('click', event => {
 
 document.querySelector('.cart-button').addEventListener('click', () => setDrawer(true));
 document.querySelector('.close-cart').addEventListener('click', () => setDrawer(false));
+document.querySelector('.checkout').addEventListener('click', () => window.location.href = 'https://buy.stripe.com/test_3cI8wQbm9fvW3xGdmI2Ry00');
 backdrop.addEventListener('click', () => setDrawer(false));
 document.addEventListener('keydown', event => { if (event.key === 'Escape') setDrawer(false); });
 
