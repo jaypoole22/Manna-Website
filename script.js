@@ -1,10 +1,3 @@
-const products = {
-  'Manna scrub': 28,
-  'Manna butter': 12,
-  'Manna body mist': 18,
-  'Manna bundle': 52,
-};
-
 const cart = [];
 const drawer = document.querySelector('.cart-drawer');
 const backdrop = document.querySelector('.drawer-backdrop');
@@ -20,23 +13,47 @@ function setDrawer(open) {
 
 function rendercart() {
   document.querySelector('.cart-count').textContent = cart.length;
-  document.querySelector('#subtotal').textContent = cart.reduce((sum, item) => sum + products[item], 0);
+  document.querySelector('#subtotal').textContent = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   if (!cart.length) {
     cartItems.innerHTML = '<p class="empty-cart">Your blessing is waiting.</p>';
     return;
   }
   cartItems.innerHTML = cart.map((item, index) => `
     <div class="cart-item">
-      <div><strong>${item}</strong><br><button type="button" data-remove="${index}">Remove</button></div>
-      <span>$${products[item]}</span>
+      <div><strong>${item.product}</strong><br><button type="button" data-remove="${index}">Remove</button></div>
+      <span>$${(item.price * item.quantity).toFixed(2)}</span>
     </div>`).join('');
 }
 
 document.querySelectorAll('.add-button').forEach(button => {
   button.addEventListener('click', () => {
-    cart.push(button.dataset.product);
+    const product = button.dataset.product;
+
+const price = Number(
+  button.querySelector('span').textContent.replace('$', '')
+);
+
+const existingItem = cart.find(
+  item => item.product === product
+);
+
+if (existingItem) {
+  existingItem.quantity += 1;
+} else {
+  cart.push({
+    product: product,
+    price: price,
+    quantity: 1
+  });  
+}
+console.log(cart);
+
     rendercart();
     setDrawer(true);
+
+    setTimeout(() => {
+      setDrawer(false);
+    }, 2000);
   });
 });
 
@@ -75,6 +92,8 @@ document.querySelector('#newsletter-form').addEventListener('submit', event => {
   }
   status.textContent = 'You’re on the list. Welcome to Manna.';
   event.currentTarget.reset();
+
+  console.log('Newsletter signup:', email.value);
 });
 
 document.querySelector('#year').textContent = new Date().getFullYear();
