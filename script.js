@@ -20,9 +20,16 @@ function rendercart() {
   }
   cartItems.innerHTML = cart.map((item, index) => `
     <div class="cart-item">
-      <div><strong>${item.product}</strong><br><button type="button" data-remove="${index}">Remove</button></div>
+      <div><strong>${item.product}</strong>
+      <br><button type="button" data-remove="${index}">Remove</button>
+      <div class="quantity-controls">
+        <button type="button" data-decrease="${index}">−</button>
+        <span>${item.quantity}</span>
+        <button type="button" data-increase="${index}">+</button>
+      </div>
       <span>$${(item.price * item.quantity).toFixed(2)}</span>
-    </div>`).join('');
+    </div>`).join('')
+    
 }
 
 document.querySelectorAll('.add-button').forEach(button => {
