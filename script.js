@@ -1,7 +1,8 @@
 const products = {
-  'Daily Dew': 28,
-  'Cloud Cream': 32,
-  'Soft Start': 24,
+  'Manna scrub': 28,
+  'Manna butter': 12,
+  'Manna body mist': 18,
+  'Manna bundle': 52,
 };
 
 const cart = [];
