@@ -79,7 +79,7 @@ document.querySelector('.checkout').addEventListener('click', async () => {
   const response = await fetch('https://mz1pijzhh2.execute-api.us-east-1.amazonaws.com/Checkout', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ items: cart })
+    body: JSON.stringify({ cart: cart })
   });
   const data = await response.json();
   window.location.href = data.url;
