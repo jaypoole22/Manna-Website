@@ -82,6 +82,13 @@ document.querySelector('.checkout').addEventListener('click', async () => {
     body: JSON.stringify({ cart: cart })
   });
   const data = await response.json();
+  console.log('STATUS:', response.status);
+  console.log('RESPONSE:', data);
+
+  if (!response.ok) {
+    console.error('Error:', data.error);
+    return;
+  }
   window.location.href = data.url;
 });
 backdrop.addEventListener('click', () => setDrawer(false));
