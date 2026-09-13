@@ -29,12 +29,13 @@ function rendercart() {
       </div>
       <span>$${(item.price * item.quantity).toFixed(2)}</span>
     </div>`).join('')
-    
+  
 }
 
 document.querySelectorAll('.add-button').forEach(button => {
   button.addEventListener('click', () => {
     const product = button.dataset.product;
+    const priceId = button.dataset.priceId;
 
 const price = Number(
   button.querySelector('span').textContent.replace('$', '')
@@ -50,6 +51,7 @@ if (existingItem) {
   cart.push({
     product: product,
     price: price,
+    priceId: priceId,
     quantity: 1
   });  
 }
@@ -73,7 +75,15 @@ cartItems.addEventListener('click', event => {
 
 document.querySelector('.cart-button').addEventListener('click', () => setDrawer(true));
 document.querySelector('.close-cart').addEventListener('click', () => setDrawer(false));
-document.querySelector('.checkout').addEventListener('click', () => window.location.href = 'https://buy.stripe.com/test_3cI8wQbm9fvW3xGdmI2Ry00');
+document.querySelector('.checkout').addEventListener('click', async () => {
+  const response = await fetch('https://mz1pijzhh2.execute-api.us-east-1.amazonaws.com/Checkout', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ items: cart })
+  });
+  const data = await response.json();
+  window.location.href = data.url;
+});
 backdrop.addEventListener('click', () => setDrawer(false));
 document.addEventListener('keydown', event => { if (event.key === 'Escape') setDrawer(false); });
 
